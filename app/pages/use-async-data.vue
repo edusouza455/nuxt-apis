@@ -1,18 +1,23 @@
 <template>
-    <div class="bg-gray-100 min-h-screen p-8">
-        <h1 class="text-3xl font-bold text-blue-600 mb-6">Use async Page</h1>
-        <button @click="refresh" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
-            recarregar dados
-        </button>   
+    <div class="bg-gray-100 min-h-screen p-8 ">
+        <div class="max-w-3xl mx-auto bg-white p-6 mb-6 rounded-lg shadow-lg flex flex-col items-center ">
+            <h1 class="text-3xl font-bold text-blue-600 mb-6 text-center">Use async Page</h1>
+            <button @click="refresh" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+                recarregar dados
+            </button>
 
-        <div v-if="pending" class="text-lg text-gray-600">carregando...</div>
-        <div v-else-if="error" class="text-red-500 bg-red-100 p-4 rounded">
+            <p class="bg-white p-4 rounded shadow mb-6 max-w-2xl  mx-auto">{{ ampharos }}</p>
+
+            <div v-if="pending" class="text-lg text-gray-600">carregando...</div>
+            <div v-else-if="error" class="text-red-500 bg-red-100 p-4 rounded">
             Erro ao carregar dados: {{ error.message }}
-        </div>
+            </div>
 
-        <pre v-else class="bg-white p-4 rounded shadow mb-6">        
-            {{ ampharos }}
-        </pre>
+        </div>
+          
+
+        
+
 
         <div class="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto">
             <h1 class="text-2xl font-bold text-center mb-4 text-purple-600">Meus pokemons favoritos</h1>
