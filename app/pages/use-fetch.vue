@@ -38,7 +38,7 @@ const endpoint = computed(() => `https://pokeapi.co/api/v2/pokemon/${selectdPoke
 const { data: charmander, 
     pending, 
     error, refresh} = await useFetch(endpoint, {
-    metthod: 'GET',
+    method: 'GET',
     headers: {
         'Content-Type': 'application/json'
     },
